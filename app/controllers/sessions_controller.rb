@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
      	flash[:notice] = 'Logged in successfully!'
      	session[:user_id] = @user.id
      	current_user
-     	redirect_to root_path
+     	redirect_to user_path @user
 
      else
      	flash[:notice] = 'Error logging in. Try again.'

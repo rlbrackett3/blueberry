@@ -13,6 +13,13 @@
 <%= flash[:notice] if flash[:notice] %>
 <%= flash[:alert] if flash[:alert] %>
 
+<% if current_user %>
+<%= link_to 'Login', new_session_path %>
+<% end %>
+<% if session[:user_id] %>
+<%= link_to 'Logout', session_path(session[:user_id]), method: :delete %>
+<% end %>
+
 <%= yield %>
 
 </body>
